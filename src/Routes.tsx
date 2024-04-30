@@ -1,5 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Loader from "components/Loader";
 import Home from "pages/Home";
 import NotFound from "pages/NotFound";
 const License = React.lazy(() => import("pages/License"));
@@ -18,7 +19,7 @@ const AboutUs = React.lazy(() => import("pages/AboutUs"));
 const LandingPage = React.lazy(() => import("pages/LandingPage"));
 const ProjectRoutes = () => {
   return (
-    <React.Suspense fallback={<>Loading...</>}>
+    <React.Suspense fallback={<Loader />}>
       <Router>
         <Routes>
           <Route path="/" element={<LandingPage />} />

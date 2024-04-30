@@ -1,6 +1,9 @@
 import React from "react";
 
 import { Button, Img, List, Text } from "components";
+import { Link } from "react-router-dom";
+
+import { useNavigate } from "react-router-dom";
 
 type LandingPageHeaderProps = React.DetailedHTMLProps<
   React.HTMLAttributes<HTMLDivElement>,
@@ -9,12 +12,14 @@ type LandingPageHeaderProps = React.DetailedHTMLProps<
   Partial<{}>;
 
 const LandingPageHeader: React.FC<LandingPageHeaderProps> = (props) => {
+  const navigate = useNavigate();
+
   return (
     <>
       <header className={props.className}>
         <div className="flex md:flex-col flex-row md:gap-10 items-center justify-between w-full">
           <div className="header-row my-px">
-            <div className="flex flex-row gap-[11px] items-center justify-start">
+            <div className="flex flex-row gap-[11px] items-center justify-start cursor-pointer" onClick={() => navigate("/")}>
               <Img className="h-10 w-10" src="images/img_home.svg" alt="home" />
               <Text
                 className="text-orange-A700 text-xl w-auto"
@@ -35,12 +40,12 @@ const LandingPageHeader: React.FC<LandingPageHeaderProps> = (props) => {
               orientation="horizontal"
             >
               <div className="flex flex-row gap-1.5 items-start justify-start w-[77px]">
-                <Text
-                  className="text-base text-gray-900 w-auto"
-                  size="txtManropeSemiBold16"
+                <Link to={"/"}
+                  className="text-base text-gray-900 w-auto cursor-pointer"
+                  // size="txtManropeSemiBold16"
                 >
                   Home
-                </Text>
+                </Link>
                 <Img
                   className="h-4 w-4"
                   src="images/img_arrowdown_gray_600.svg"
@@ -48,44 +53,44 @@ const LandingPageHeader: React.FC<LandingPageHeaderProps> = (props) => {
                 />
               </div>
               <div className="flex flex-row gap-1.5 items-start justify-start w-[77px]">
-                <Text
-                  className="text-base text-gray-900 w-auto"
-                  size="txtManropeSemiBold16"
+                <Link to={"/listing"}
+                  className="text-base text-gray-900 w-auto cursor-pointer"
+                  // size="txtManropeSemiBold16"
                 >
                   Listing
-                </Text>
-                <Img
+                </Link>
+                {/* <Img
                   className="h-4 w-4"
                   src="images/img_arrowdown_gray_600.svg"
                   alt="arrowdown"
-                />
+                /> */}
               </div>
               <div className="flex flex-row gap-1.5 items-start justify-start w-[77px]">
-                <Text
-                  className="text-base text-gray-900 w-auto"
-                  size="txtManropeSemiBold16"
+                <Link to={"/agentlist"}
+                  className="text-base text-gray-900 w-auto cursor-pointer"
+                  // size="txtManropeSemiBold16"
                 >
                   Agents
-                </Text>
-                <Img
+                </Link>
+                {/* <Img
                   className="h-4 w-4"
                   src="images/img_arrowdown_gray_600.svg"
                   alt="arrowdown"
-                />
+                /> */}
               </div>
             </List>
-            <Text
-              className="text-base text-center text-gray-900 w-auto"
-              size="txtManropeSemiBold16"
+            <Link to={"/contactpage"} 
+              className="text-base text-center text-gray-900 w-auto cursor-pointer"
+              // size="txtManropeSemiBold16"
             >
               Property{" "}
-            </Text>
-            <Text
-              className="text-base text-gray-900 w-auto"
-              size="txtManropeSemiBold16"
+            </Link>
+            <Link to={"/blogpage"}
+              className="text-base text-gray-900 w-auto cursor-pointer"
+              // size="txtManropeSemiBold16"
             >
               Blog
-            </Text>
+            </Link>
           </div>
           <div className="flex flex-row gap-10 h-[42px] md:h-auto sm:hidden items-center justify-start w-[228px]">
             <Button
