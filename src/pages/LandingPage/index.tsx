@@ -37,7 +37,7 @@ const LandingPagePage: React.FC = () => {
                     <>
                       Find a perfect property
                       <br />
-                      Where you&#39;ll love to live
+                      Where you'll love to live
                     </>
                   </Text>
                   <Text
